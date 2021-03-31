@@ -5,10 +5,8 @@ class Room:
     allRooms = []
 
     def __init__(self, row, column):
-
         self.row = row
         self.column = column
-        self.weight = 1
         self.posNeighbors = [
             [self.row, self.column - 1],
             [self.row - 1, self.column],
@@ -55,14 +53,5 @@ class Dungeon:
             newRoomPositionInd = r.randint(0, len(possibleNewRooms) - 1)
             newRoomPosition = possibleNewRooms[newRoomPositionInd]
             self.dungeon[newRoomPosition[0]][newRoomPosition[1]] = Room(newRoomPosition[0], newRoomPosition[1])
-
-
-dungeon = Dungeon()
-
-
-start_room = Room(5,5)
-dungeon.dungeon[5][5] = start_room
-
-
-dungeon.generate_dungeon(12)
-dungeon.show_dungeon()
+            
+#make sure to make a starting room so that there is one for the program to branch off of.
